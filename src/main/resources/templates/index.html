@@ -1,0 +1,44 @@
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Saled anager</title>
+</head>
+<body>
+<div align="center">
+
+    <h1>
+        Sales record
+    </h1>
+    <a href="/new">Enter new sale</a>
+    <br>
+    <table>
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Item Name</th>
+            <th>Quantity</th>
+            <th>Amount</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="sale : ${sales}">
+<th th:text="${sale.getId()}"></th>
+            <th th:text="${sale.getItem()}"></th>
+            <th th:text="${sale.getQuantit()}"></th>
+            <th th:text="${sale.amount}"></th>
+            <th >
+                <a th:href="@{'/edit/' + ${sale.getId()}}">Edit</a>
+                <a th:href="@{'/delete/' + ${sale.getId()}}">Delete</a>
+            </th>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+</body>
+</html>

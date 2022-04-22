@@ -1,0 +1,51 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Edit Sale</title>
+</head>
+<body>
+<div align="center">
+    <h1>UpdateSalw</h1>
+    <br>
+    <form action="#" th:action="@{'/update'}" th:object="${sale}" method="POST">
+        <table>
+            <tr>
+                <td>Id</td>
+                <td>
+                    <input type="text" th:field="*{id}" readonly="readonly">
+                </td>
+            </tr>
+            <tr>
+                <td>Item name</td>
+                <td>
+                    <input type="text" th:field="*{item}">
+                </td>
+            </tr>
+            <tr>
+                <td>Quantity</td>
+                <td>
+                    <input type="text" th:field="*{quantit}">
+                </td>
+            </tr>
+            <tr>
+                <td>Amount</td>
+                <td>
+                    <input type="text" th:field="*{amount}">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button type="submit"> save</button>
+                </td>
+
+            </tr>
+        </table>
+    </form>
+</div>
+
+
+</body>
+</html>
